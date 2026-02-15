@@ -12,7 +12,30 @@ DEFAULT_LANGUAGE = "es"  # PEP 8: Comillas dobles para strings
 # PEP 8: Utilidades comunes del proyecto - funciones en snake_case
 def clean_text(text):
     # PEP 8: 4 espacios por indentación, no tabs
-    """Limpia y normaliza texto."""  # PEP 8: Docstrings en comillas dobles triples
+    """
+    Limpia y normaliza una cadena de texto eliminando espacios y convirtiendo a minúsculas.
+
+    Esta función toma una cadena de entrada, elimina los espacios en blanco
+    al inicio y al final, y convierte todos los caracteres a minúsculas
+    para estandarizar el procesamiento de datos.
+
+    Args:
+        text (str): La cadena de texto original que se desea procesar.
+
+    Returns:
+        str: El texto normalizado. Si el valor de entrada es evaluado 
+             como falso (None o vacío), devuelve una cadena vacía.
+
+    Raises:
+        TypeError: Si 'text' no es una cadena de texto (str) o None, 
+                  impidiendo el uso de métodos de cadena.
+
+    Examples:
+        >>> clean_text("  Hola Mundo  ")
+        'hola mundo'
+        >>> clean_text(None)
+        ''
+    """
     if not text:
         return ""
     return text.strip().lower()
