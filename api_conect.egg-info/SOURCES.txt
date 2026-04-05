@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+api_conect.egg-info/PKG-INFO
+api_conect.egg-info/SOURCES.txt
+api_conect.egg-info/dependency_links.txt
+api_conect.egg-info/requires.txt
+api_conect.egg-info/top_level.txt
+news_analyzer/__init__.py
+news_analyzer/api_client.py
+news_analyzer/config.py
+news_analyzer/exceptions.py
+news_analyzer/utils.py

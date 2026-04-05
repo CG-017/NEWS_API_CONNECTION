@@ -1,34 +1,39 @@
-sample_articles = [
-    {'title': 'Python logra nuevo éxito', 'source': {'name': 'TechNews'}, 'description': 'Gran noticia', 'category': 'Tecnología'},
-    {'title': 'Mercado en crisis', 'source': {'name': 'Finance'}, 'description': 'Análisis completo', 'category': 'Economía'},
-    {'title': 'Nueva tecnología', 'source': {'name': 'TechNews'}, 'description': 'Innovación', 'category': 'Tecnología'},
-    {'title': 'Deportes hoy', 'source': {'name': 'Sports'}, 'description': 'Resultados', 'category': 'Deportes'},
-    {'title': 'Política actual', 'source': {'name': 'News'}, 'description': 'Actualidad', 'category': 'Política'},
-    {'title': 'Ciencia avanza', 'source': {'name': 'Science'}, 'description': 'Descubrimientos', 'category': 'Ciencia'}
-]
+"""Explicaciones y ejemplos de comprehensions en Ptyhon"""
+
+from sample_data import sample_articles
+
 
 def extract_titles_traditional(articles):
     """Extrae solo los titulos usando un for"""
     titles = []
     for article in articles:
-        titles.append(article['title'])
+        titles.append(article["title"])
     return titles
 
 
 def extract_titles(articles):
     """Extrae solo los titulos usando un for"""
-    return [article['title'] for article in articles]
+    return [article["title"] for article in articles]
+
 
 def extract_categories(articles):
     """Extrae las categorias unicas usando un for"""
     return [article["category"] for article in articles]
 
+
+print(extract_titles_traditional(sample_articles))
+print("======")
+print(extract_titles(sample_articles))
+print(extract_categories(sample_articles))
+
+
 def get_sources_traditional(articles):
     sources = set()
     for article in articles:
-        if article.get("source") and article.get("source").get ("name"):
+        if article.get("source") and article.get("source").get("name"):
             sources.add(article.get("source").get("name"))
     return sources
+
 
 def get_sources(articles):
     return {
@@ -63,14 +68,9 @@ def categorize(articles):
         for source in sources
     }
 
+
 print(catogorize_traditional(sample_articles))
-print("=============================================================================================================================")
+print(
+    "============================================================================================================================="
+)
 print(categorize(sample_articles))
-
-# print(extract_titles_traditional(sample_articles))
-# print(extract_titles(sample_articles))
-# print(set(extract_categories(sample_articles)))
-# print(get_sources_traditional(sample_articles))
-# print(get_sources(sample_articles))
-
-# print(len(set(extract_categories(sample_articles))))
